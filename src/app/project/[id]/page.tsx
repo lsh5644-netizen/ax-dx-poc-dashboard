@@ -1,5 +1,6 @@
-'use client';
 
+
+import ProjectClient from './ProjectClient'; // 실제 클라이언트 컴포넌트 불러오기
 import { use, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -371,4 +372,7 @@ export default function ProjectDetailPage({ params }: PageProps) {
 }
 export async function generateStaticParams() {
   return [];
+}
+export default function Page({ params }: { params: { id: string } }) {
+  return <ProjectClient params={params} />;
 }
